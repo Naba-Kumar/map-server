@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5" id="reg">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mb-4">Register</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="first-name">First Name *</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name *</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-no">Mobile No *</label>
+                        <input type="tel" class="form-control" id="mobile-no" placeholder="Enter Mobile No" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization Name *</label>
+                        <input type="text" class="form-control" id="organization" placeholder="Enter Organization Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <input type="text" class="form-control" id="department" placeholder="Enter Department" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation *</label>
+                        <input type="text" class="form-control" id="designation" placeholder="Enter Designation"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail address *</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">About</label>
+                        <textarea class="form-control" id="about" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-type">User Type *</label>
+                        <select class="form-control" id="user-type" required>
+                            <option value="">Select User Type</option>
+                            <option value="researcher">Researcher</option>
+                            <option value="govt-employee">Government Employee</option>
+                            <option value="private-employee">Private Employee</option>
+                            <option value="college-institute">College/Institute</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id-proof">Upload Your ID Proof *</label>
+                        <input type="file" class="form-control-file" id="id-proof" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="captcha">Enter Captcha Code from Image *</label>
+                        <input type="text" class="form-control" id="captcha" placeholder="Enter Captcha Code" required>
+                        <!-- Placeholder for captcha image -->
+                        <!-- Implementing captcha typically requires backend processing -->
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a id="gotologin">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5" id="login">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mb-4">Login</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="emailOrPhone">Email or Phone</label>
+                        <input type="text" class="form-control" id="emailOrPhone" placeholder="Enter Email or Phone"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="otp">OTP</label>
+                        <input type="text" class="form-control" id="otp" placeholder="Enter OTP">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="loginButton">Login</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a id="gotoreg">Register here</a></p>
+                </div>
+            </div>
+        </div>
+        <div id="register" class="row mt-5" style="display: none;">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mb-4">Register</h2>
+                <!-- Registration form content goes here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to switch between login and register forms
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('gotologin').addEventListener('click', function () {
+                document.getElementById('login').style.display = 'block';
+                document.getElementById('reg').style.display = 'none';
+            });
+            document.getElementById('gotoreg').addEventListener('click', function () {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('reg').style.display = 'block';
+            });
+
+
+        });
+
+        // Script to show/hide OTP field based on login method selection
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('emailOrPhone').addEventListener('input', function () {
+                var value = this.value;
+                var otpInput = document.getElementById('otp');
+                if (value.includes('@')) {
+                    otpInput.disabled = false;
+                    otpInput.required = true;
+                    otpInput.placeholder = 'Enter OTP';
+                } else {
+                    otpInput.disabled = true;
+                    otpInput.required = false;
+                    otpInput.value = '';
+                    otpInput.placeholder = 'OTP not required for phone login';
+                }
+            });
+        });
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
