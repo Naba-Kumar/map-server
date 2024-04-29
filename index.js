@@ -3,8 +3,8 @@ const hbs = require('hbs')
 const path = require('path')
 const app = express();
 
-const viewpath = path.join(__dirname , "../tamplates/views")
-const partialpath = path.join(__dirname , "../tamplates/partials")
+const viewpath = path.join(__dirname , "tamplates/views")
+const partialpath = path.join(__dirname , "tamplates/partials")
 
 app.use(express.static('public'));
 
@@ -18,6 +18,10 @@ hbs.registerPartials(partialpath);
 
 app.get('/', (req, res)=>{
     res.render("home");
+})
+
+app.get('/catalog', (req, res)=>{
+  res.render("catalog");
 })
 
 // Start the Express application
