@@ -9,6 +9,7 @@
   "author": "naba",
   "license": "ISC",
   "dependencies": {
+    "all": "^0.0.0",
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "hbs": "^4.2.0",

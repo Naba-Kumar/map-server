@@ -1,32 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    {{>head}}
+    {{>css}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your GIS Platform</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">  -->
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-</head>
-
+    </head>
 <body>
+
+    {{>homeHeader}}
 
 
     <!-- Hero section Starts -->
@@ -37,7 +18,7 @@
             <a href="#" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore</a>
         </div>
         <video autoplay muted loop poster="video-placeholder.jpg" id="bg-video">
-            <source src="./2695085-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <source src="./image/2695085-hd_1920_1080_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -80,8 +61,8 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex flex-column">
-                        <img class="img-fluid rounded w-75 align-self-end" src="./mapp.jpg" alt="">
-                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="./osmmapimg.png" alt=""
+                        <img class="img-fluid rounded w-75 align-self-end" src="./image/mapp.jpg" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="./image/osmmapimg.png" alt=""
                             style="margin-top: -25%;">
                     </div>
                 </div>
@@ -277,7 +258,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="./mapp.jpg" style="object-fit: cover;"
+                        <img class="position-absolute img-fluid w-100 h-100" src="./image/mapp.jpg" style="object-fit: cover;"
                             alt="">
                     </div>
                 </div>
@@ -364,6 +345,8 @@
         </div>
     </div>
     <!-- Contact End -->
+
+    {{>homeFooter}}
 
 
     <script src="script.js"></script>
