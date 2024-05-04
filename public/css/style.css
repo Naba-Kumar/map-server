@@ -623,7 +623,7 @@ btnclr1{
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary);
+    /* color: var(--primary); */
     letter-spacing: 1px;
     box-shadow: none;
 }

@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    {{>header}}
 
 
     <div class="">
@@ -36,13 +37,13 @@
                         <div class=" mt-3">
 
                             {{!-- <input type="submit" value="Register" class="btn px-5 btn-primary  m-2"> --}}
-                <a href="/Register" class="class="btn px-5 btn-primary  m-2"">Register</a>
-                <a href="/Login" class="class="btn px-5 btn-primary  m-2"">Login</a>
-                <a href="/Forgot" class="class="btn px-5 btn-primary  m-2"">Home</a>
+                <a href="/Register" class="class="btn px-5 btn-primary  m-2""> <input type="submit" value="Register" class="btn px-5 btn-secondary  m-2"></a>
+                <a href="/Login" class="class="btn px-5 btn-primary  m-2""> <input type="submit" value="Login" class="btn px-5 btn-secondary  m-2"></a>
+                <a href="/Forgot" class="class="btn px-5 btn-primary  m-2""><input type="submit" value="Update" class="btn px-5 btn-secondary  m-2"></a>
 
                             {{!-- <input type="submit" value="Login" class="btn px-5 btn-primary  m-2"> --}}
 
-                            <input type="submit" value="Update" class="btn px-5 btn-primary  m-2">
+                            {{!-- <input type="submit" value="Update" class="btn px-5 btn-primary  m-2"> --}}
 
                         </div>
                         <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.
