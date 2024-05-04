@@ -3,8 +3,11 @@ const hbs = require('hbs')
 const path = require('path')
 const app = express();
 
-const viewpath = path.join(__dirname , "tamplates/views")
-const partialpath = path.join(__dirname , "tamplates/partials")
+const viewpath = path.join(__dirname , "templates/views")
+const partialpath = path.join(__dirname , "templates/partials")
+console.log(viewpath)
+console.log(partialpath)
+
 
 app.use(express.static('public'));
 
@@ -22,6 +25,16 @@ app.get('/', (req, res)=>{
 
 app.get('/catalog', (req, res)=>{
   res.render("catalog");
+})
+
+app.get('/Register', (req, res)=>{
+  res.render("userRegister");
+})
+app.get('/Login', (req, res)=>{
+  res.render("userLogin");
+})
+app.get('/Forgot', (req, res)=>{
+  res.render("userForgot");
 })
 
 // Start the Express application
